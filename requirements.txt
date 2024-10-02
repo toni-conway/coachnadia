@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+imbalanced-learn
+scikit-learn==1.2.2
+streamlit_folium==0.17.3
+folium==0.15.1
+geopy==2.4.1
+geocoder==1.38.1
