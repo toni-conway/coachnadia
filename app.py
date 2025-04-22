@@ -495,26 +495,24 @@ def process_location(dp_reco_df, tc_reco_df):
                 st.info(f"No Developmental Pediatrician Found")
             else:
                 st.dataframe(dp_reco_df[['Developmental Pediatrician','Address','Contact']])
-                st.info(dp_reco_df)
-        st.info(tc_reco_df)
         
         if st.session_state.t_show == True:
             if len(tc_reco_df) == 0:
                 st.info(f"No Therapy Center Found")
             else:
                 st.info(f"Check 1")
-                #st.dataframe(tc_reco_df[['Therapy Center','Address','Contact','Link']], hide_index=True)
+                # st.dataframe(tc_reco_df[['Therapy Center','Address','Contact','Link']], hide_index=True)
 
-                #st.data_editor(
-                #    tc_reco_df[['Therapy Center','Address','Contact','Link']],
-                #    column_config={
-                #        'Link': st.column_config.LinkColumn(
-                #            "Website",
-                #            help="click the link below",
-                #            max_chars=100, disabled=True
-                #        )},
-                #    hide_index=True,
-                #    )
+                st.data_editor(
+                    tc_reco_df[['Therapy Center','Address','Contact','Link']],
+                    column_config={
+                        'Link': st.column_config.LinkColumn(
+                            "Website",
+                            help="click the link below",
+                            max_chars=100, disabled=True
+                        )},
+                    hide_index=True
+                    )
 
 
 
