@@ -313,9 +313,12 @@ def demographics_questionnaire():
     with st.form("Background Questionnaire"):
         st.info("##### Background Questions")
         st.session_state.child_name = st.text_input("Child Name", max_chars=50)
-        
+
+        st.markdown("CHECK 1X")
         B1 = st.number_input("B1. What age is your child (in months) [0-48]?", 0, 48, help="Select the age of your child in months.")
         B2 = st.radio("B2. What is your child's gender?", ["Male", "Female"], help="Choose the gender of your child.", horizontal=True, index=None)
+        
+        st.markdown("CHECK 2X")
         B3 = st.radio("B3. What is your child's ethnicity?", ["Asian", "Black", "Hispanic", "Latino", "Middle Eastern", "Native Indian", "Pacifica",
                                         "South Asian", "White European", "Mixed", "Others"],
                         help="Select the ethnicity that best describes your child.", horizontal=True, index=None)
@@ -520,8 +523,6 @@ def process_location(dp_reco_df, tc_reco_df):
 #######################################################
 st.session_state.model = load_pickle()
 
-st.markdown("CHECK 1")
-st.markdown(st.session_state.page_no)
 if st.session_state.page_no == 0:
     demographics_questionnaire()
 
