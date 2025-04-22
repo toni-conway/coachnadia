@@ -520,7 +520,7 @@ def process_location(dp_reco_df, tc_reco_df):
 #######################################################
 st.session_state.model = load_pickle()
 
-demographics_questionnaire()
+st.form_submit_button(" Next Page ")
 
 if st.session_state.page_no == 0:
     demographics_questionnaire()
