@@ -355,7 +355,7 @@ def qchat_questionnaire():
 
         Responses = [""] * 10
         for i, Question in enumerate(Questions):
-            Responses[i] = st.radio(f"Q{i+1}. {Question}", Q_Options[i], index=None, horizontal=True) 
+            Responses[i] = st.radio(f"Q{i+1}. {Question}", Q_Options[i], index=0, horizontal=True) 
 
         if st.form_submit_button("Submit"):
             NoResponse = evaluate_Qchat(Responses, Q_Options)
