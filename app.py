@@ -510,8 +510,8 @@ def process_location(dp_reco_df, tc_reco_df):
                             "Website",
                             help="click the link below",
                             max_chars=100, disabled=True
-                        )},
-                    hide_index=True
+                        )}
+                    # hide_index=True
                     )
 
 
