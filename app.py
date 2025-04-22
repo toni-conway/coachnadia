@@ -499,7 +499,8 @@ def demographics_questionnaire():
         #                help="Select the person who administered the test.", horizontal=True, index=None)
 
         if B1 == 0: B1 = None
-            Responses = [B1, B2, B3, B4, B5, B6]
+        
+        Responses = [B1, B2, B3, B4, B5, B6]
 
         if st.form_submit_button(" Next Page "):
             NoResponse = [i+1 for i, x in enumerate(Responses) if x is None] 
