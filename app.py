@@ -500,6 +500,7 @@ def process_location(dp_reco_df, tc_reco_df):
             if len(tc_reco_df) == 0:
                 st.info(f"No Therapy Center Found")
             else:
+                st.info(f"Check 1")
                 st.dataframe(tc_reco_df[['Therapy Center','Address','Contact','Link']], hide_index=True)
 
                 st.data_editor(
@@ -566,13 +567,14 @@ else:
         # ------- Mild/Severe Autism -----#
         if st.session_state.pred > 0:
             Symptoms_Id = 91
-            # subreddit_link = """
-            # [Autism_Parenting](https://www.reddit.com/r/Autism_Parenting)\n
-            # [AutisticParents](https://www.reddit.com/r/AutisticParents)
-            # """
+            
+            subreddit_link = """
+            [Autism_Parenting](https://www.reddit.com/r/Autism_Parenting)\n
+            [AutisticParents](https://www.reddit.com/r/AutisticParents)
+            """
 
             st.info("Connect with Reddit communities to acquire valuable insights and shared experiences from parents and families raising children on the autism spectrum.")
-            # st.markdown(subreddit_link)
+            st.markdown(subreddit_link)
 
             link_column  = st.columns(2)
             with link_column[0]: st.markdown("* [Autism_Parenting](https://www.reddit.com/r/Autism_Parenting)")
