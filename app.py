@@ -500,7 +500,7 @@ def process_location(dp_reco_df, tc_reco_df):
             if len(tc_reco_df) == 0:
                 st.info(f"No Therapy Center Found")
             else:
-                #st.dataframe(tc_reco_df[['Therapy Center','Address','Contact','Link']], hide_index=True)
+                st.dataframe(tc_reco_df[['Therapy Center','Address','Contact','Link']], hide_index=True)
 
                 st.data_editor(
                     tc_reco_df[['Therapy Center','Address','Contact','Link']],
