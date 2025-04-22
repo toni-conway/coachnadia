@@ -500,7 +500,7 @@ def demographics_questionnaire():
         if B1 == 0: B1 = None 
         B2 = None 
         B3 = None  
-        B4 = None  
+        B6 = None  
         Responses = [B1, B2, B3, B4, B5, B6]
         st.markdown(Responses)
         st.markdown("CHECK 4B")
