@@ -496,8 +496,9 @@ def demographics_questionnaire():
         #B6 = st.radio("B6. Who completed the test?", ["Family Member", "Health Care Professional"],
         #                help="Select the person who administered the test.", horizontal=True, index=None)
 
+        st.markdown("CHECK 2B")
         if B1 == 0: B1 = None 
-
+        st.markdown("CHECK 3B")
         B2 = None 
         B3 = None  
         B4 = None  
