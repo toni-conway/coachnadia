@@ -485,8 +485,8 @@ def process_location(dp_reco_df, tc_reco_df):
     if len(dp_reco_df) > 0 or len(tc_reco_df) > 0:
 
         map_column  = st.columns(2)
-        with map_column[0]: st.session_state.d_show = st.toggle("Show Developmental Pediatrician",value=True)
-        with map_column[1]: st.session_state.t_show = st.toggle("Show Therapy Center", value=True)
+        with map_column[0]: st.session_state.d_show = st.checkbox("Show Developmental Pediatrician",value=True)
+        with map_column[1]: st.session_state.t_show = st.checkbox("Show Therapy Center", value=True)
 
         create_folium_map(dp_reco_df, tc_reco_df, st.session_state.locgeo)
 
