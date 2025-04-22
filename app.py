@@ -498,12 +498,12 @@ def demographics_questionnaire():
 
         st.markdown("CHECK 2B")
         if B1 == 0: B1 = None 
-        st.markdown("CHECK 3B")
         B2 = None 
         B3 = None  
         B4 = None  
         Responses = [B1, B2, B3, B4, B5, B6]
         st.markdown(Responses)
+        st.markdown("CHECK 4B")
 
         if st.form_submit_button(" Next Page "):
             NoResponse = [i+1 for i, x in enumerate(Responses) if x is None] 
