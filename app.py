@@ -96,6 +96,7 @@ st.warning("""
         This tool is not intended to provide an official diagnosis and is merely a screening resource to assess the potential need for further professional diagnostic evaluation.
         """, icon="⚠️")
 
+st.session_state.page_no      = 0
 # First Initialization
 if "page_no" not in st.session_state:
     st.session_state.page_no      = 0
