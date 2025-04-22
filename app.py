@@ -494,8 +494,8 @@ def process_location(dp_reco_df, tc_reco_df):
             if len(dp_reco_df) == 0:
                 st.info(f"No Developmental Pediatrician Found")
             else:
-                st.dataframe(dp_reco_df[['Developmental Pediatrician','Address','Contact']], hide_index=True)
-
+                #st.dataframe(dp_reco_df[['Developmental Pediatrician','Address','Contact']], hide_index=True)
+                t.info(dp_reco_df)
         st.info(tc_reco_df)
         
         if st.session_state.t_show == True:
