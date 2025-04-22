@@ -520,6 +520,8 @@ def process_location(dp_reco_df, tc_reco_df):
 #######################################################
 st.session_state.model = load_pickle()
 
+st.markdown("CHECK 1")
+st.markdown(st.session_state.page_no)
 if st.session_state.page_no == 0:
     demographics_questionnaire()
 
