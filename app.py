@@ -96,7 +96,6 @@ st.warning("""
         This tool is not intended to provide an official diagnosis and is merely a screening resource to assess the potential need for further professional diagnostic evaluation.
         """, icon="⚠️")
 
-st.session_state.page_no      = 0
 # First Initialization
 if "page_no" not in st.session_state:
     st.session_state.page_no      = 0
@@ -520,6 +519,8 @@ def process_location(dp_reco_df, tc_reco_df):
 # MAIN
 #######################################################
 st.session_state.model = load_pickle()
+
+demographics_questionnaire()
 
 if st.session_state.page_no == 0:
     demographics_questionnaire()
