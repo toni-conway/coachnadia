@@ -485,8 +485,8 @@ def demographics_questionnaire():
         st.info("##### Background Questions")
         st.session_state.child_name = st.text_input("Child Name", max_chars=50)
 
-        st.markdown("CHECK 1A")
         B1 = st.number_input("B1. What age is your child (in months) [0-48]?", 0, 48, help="Select the age of your child in months.")
+        st.markdown("CHECK 1B")
         B2 = st.radio("B2. What is your child's gender?", ["Male", "Female"], help="Choose the gender of your child.", horizontal=True, index=None)
         
         st.markdown("CHECK 2X")
