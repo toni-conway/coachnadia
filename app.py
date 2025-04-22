@@ -496,6 +496,8 @@ def process_location(dp_reco_df, tc_reco_df):
             else:
                 st.dataframe(dp_reco_df[['Developmental Pediatrician','Address','Contact']], hide_index=True)
 
+        st.dataframe(tc_reco_df)
+        
         if st.session_state.t_show == True:
             if len(tc_reco_df) == 0:
                 st.info(f"No Therapy Center Found")
