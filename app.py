@@ -544,7 +544,7 @@ else:
 
         # ------- Mild/Severe Autism -----#
         if st.session_state.pred > 0:
-            expand_section = st.toggle("Expand All")
+            expand_section = st.toggle("Expand All", value=False)
             st.info("The child displays the following symptoms associated with ASD")
 
             for i, Symptoms_Id in enumerate(Symptoms_Ids):
