@@ -304,49 +304,6 @@ def evaluate_Qchat(Responses, Q_Options):
 
 
 #######################################################
-# Function Name: demographics_questionnaire
-# Description  : Show demographics questionnaire
-#######################################################
-def demographics_questionnaire():
-    st.markdown("Please answer the following questions about your child")
-
-    with st.form("Background Questionnaire"):
-        st.info("##### Background Questions")
-        st.session_state.child_name = st.text_input("Child Name", max_chars=50)
-
-        st.markdown("CHECK 1X")
-        B1 = st.number_input("B1. What age is your child (in months) [0-48]?", 0, 48, help="Select the age of your child in months.")
-        B2 = st.radio("B2. What is your child's gender?", ["Male", "Female"], help="Choose the gender of your child.", horizontal=True, index=None)
-        
-        st.markdown("CHECK 2X")
-        B3 = st.radio("B3. What is your child's ethnicity?", ["Asian", "Black", "Hispanic", "Latino", "Middle Eastern", "Native Indian", "Pacifica",
-                                        "South Asian", "White European", "Mixed", "Others"],
-                        help="Select the ethnicity that best describes your child.", horizontal=True, index=None)
-        B4 = st.checkbox("B4. Has your child experienced jaundice?", help="Check this box if your child experienced jaundice")
-        B5 = st.checkbox("B5. Do any of your child's immediate family members (siblings or parents) have a diagnosis of autism?", 
-                          help="Check this box if any immediate family members have been diagnosed with autism")
-        B6 = st.radio("B6. Who completed the test?", ["Family Member", "Health Care Professional"],
-                        help="Select the person who administered the test.", horizontal=True, index=None)
-
-        if B1 == 0: B1 = None
-        Responses = [B1, B2, B3, B4, B5, B6]
-
-        if st.form_submit_button(" Next Page "):
-            NoResponse = [i+1 for i, x in enumerate(Responses) if x is None] 
-            NoResponseText = ', '.join("B"+str(item) for item in NoResponse)
-            
-            if st.session_state.child_name == "": 
-                NoResponseText = "Child Name, " + NoResponseText
- 
-            if len(NoResponse) > 0:
-                st.error(f"Please answer questions {NoResponseText} then click Next Page button", icon="🚨")
-                st.session_state.page_no = 0
-            else:
-                st.session_state.bg_result = Responses
-                st.session_state.page_no += 1
-
-
-#######################################################
 # Function Name: qchat_questionnaire
 # Description  : Show Q-CHAT-10 questionnaire
 #######################################################
@@ -517,6 +474,48 @@ def process_location(dp_reco_df, tc_reco_df):
                     )
 
 
+#######################################################
+# Function Name: demographics_questionnaire
+# Description  : Show demographics questionnaire
+#######################################################
+def demographics_questionnaire():
+    st.markdown("Please answer the following questions about your child")
+
+    with st.form("Background Questionnaire"):
+        st.info("##### Background Questions")
+        st.session_state.child_name = st.text_input("Child Name", max_chars=50)
+
+        st.markdown("CHECK 1X")
+        B1 = st.number_input("B1. What age is your child (in months) [0-48]?", 0, 48, help="Select the age of your child in months.")
+        B2 = st.radio("B2. What is your child's gender?", ["Male", "Female"], help="Choose the gender of your child.", horizontal=True, index=None)
+        
+        st.markdown("CHECK 2X")
+        B3 = st.radio("B3. What is your child's ethnicity?", ["Asian", "Black", "Hispanic", "Latino", "Middle Eastern", "Native Indian", "Pacifica",
+                                        "South Asian", "White European", "Mixed", "Others"],
+                        help="Select the ethnicity that best describes your child.", horizontal=True, index=None)
+        B4 = st.checkbox("B4. Has your child experienced jaundice?", help="Check this box if your child experienced jaundice")
+        B5 = st.checkbox("B5. Do any of your child's immediate family members (siblings or parents) have a diagnosis of autism?", 
+                          help="Check this box if any immediate family members have been diagnosed with autism")
+        B6 = st.radio("B6. Who completed the test?", ["Family Member", "Health Care Professional"],
+                        help="Select the person who administered the test.", horizontal=True, index=None)
+
+        if B1 == 0: B1 = None
+        Responses = [B1, B2, B3, B4, B5, B6]
+
+        if st.form_submit_button(" Next Page "):
+            NoResponse = [i+1 for i, x in enumerate(Responses) if x is None] 
+            NoResponseText = ', '.join("B"+str(item) for item in NoResponse)
+            
+            if st.session_state.child_name == "": 
+                NoResponseText = "Child Name, " + NoResponseText
+ 
+            if len(NoResponse) > 0:
+                st.error(f"Please answer questions {NoResponseText} then click Next Page button", icon="🚨")
+                st.session_state.page_no = 0
+            else:
+                st.session_state.bg_result = Responses
+                st.session_state.page_no += 1
+                
 
 #######################################################
 # MAIN
